@@ -7,10 +7,7 @@ void ofApp::setup(){
     syphonServer.setName("Awesomium web page");
     
     browser.setup(5300, 1000);
-    browser.loadURL("http://api.plumelabs.com/udl4.html");
-    //browser.setup(1920, 1080);
-    //browser.loadURL("http://www.creativeapplications.net/");
-
+    browser.loadURL("http://api.plumelabs.com/udl2.html");
 }
 
 //--------------------------------------------------------------
@@ -24,8 +21,7 @@ void ofApp::draw(){
     //browser.draw(0, 0);
     ofSetColor(ofColor::black);
     ofBackground(220);
-    ofDrawBitmapString("La page ne s'affiche pas ici", 20, 50);
-    ofDrawBitmapString("Elle est dispo dans un flux Syphon", 20, 70);
+    ofDrawBitmapString("La page est affichable via Syphon", 20, 70);
     string flux = "Taille du flux : " + ofToString(browser.getWidth()) + " x " + ofToString(browser.getHeight()) + " pixels";
     ofDrawBitmapString(flux, 20, 110);
     string fpsStr = "Performances : " + ofToString(ofGetFrameRate(), 2) + " fps";
@@ -35,7 +31,18 @@ void ofApp::draw(){
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-
+    if (key == '1'){
+        browser.loadURL("http://api.plumelabs.com/udl2.html");
+    }
+    if (key == '2'){
+        browser.loadURL("http://api.plumelabs.com/udl3.html");
+    }
+    if (key == '3'){
+        browser.loadURL("http://api.plumelabs.com/udl4.html");
+    }
+    if (key == '4'){
+        browser.loadURL("http://api.plumelabs.com/udl5.html");
+    }
 }
 
 //--------------------------------------------------------------
