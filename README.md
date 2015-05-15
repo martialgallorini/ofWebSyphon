@@ -1,7 +1,7 @@
 ofWebSyphon
 ==========
 
-Open source software to publishe a web page into a Syphon server
+Very simple app which publishes a web page into a Syphon server
 
 Written in C++ using openFrameworks 0.8.4 on MacOSX 10.10
 
