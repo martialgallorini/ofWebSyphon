@@ -21,6 +21,8 @@ class ofApp : public ofBaseApp{
 		void dragEvent(ofDragInfo dragInfo);
 		void gotMessage(ofMessage msg);
     
+    string urlAddress;
+    
     ofxSyphonServer syphonServer;
     ofxAwesomium browser;
 };

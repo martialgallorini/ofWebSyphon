@@ -2,12 +2,13 @@
 
 //--------------------------------------------------------------
 void ofApp::setup(){
-    ofSetFrameRate(30);
+    ofSetFrameRate(60);
     
     syphonServer.setName("Awesomium web page");
     
     browser.setup(5300, 1000);
-    browser.loadURL("http://api.plumelabs.com/udl2.html");
+    urlAddress = "http://api.plumelabs.com/udl2.html";
+    browser.loadURL(urlAddress);
 }
 
 //--------------------------------------------------------------
@@ -21,28 +22,30 @@ void ofApp::draw(){
     //browser.draw(0, 0);
     ofSetColor(ofColor::black);
     ofBackground(220);
-    ofDrawBitmapString("La page est affichable via Syphon", 20, 70);
+    
+    ofDrawBitmapString("La page est affichable via Syphon", 20, 40);
+    
     string flux = "Taille du flux : " + ofToString(browser.getWidth()) + " x " + ofToString(browser.getHeight()) + " pixels";
-    ofDrawBitmapString(flux, 20, 110);
+    ofDrawBitmapString(flux, 20, 70);
+    
+    string urlText = "URL actuelle : " + urlAddress;
+    ofDrawBitmapString(urlText, 20, 100);
+
     string fpsStr = "Performances : " + ofToString(ofGetFrameRate(), 2) + " fps";
     ofDrawBitmapString(fpsStr, 20, 130);
+    
+    ofDrawBitmapString("touche 'n' pour changer d'URL", 20, 160);
+    
     syphonServer.publishTexture(&browser.frame.getTextureReference());
 }
 
 //--------------------------------------------------------------
 void ofApp::keyPressed(int key){
-    if (key == '1'){
-        browser.loadURL("http://api.plumelabs.com/udl2.html");
+    if (key == 'n'){
+    urlAddress = ofSystemTextBoxDialog("Saisir une URL", urlAddress);
+    browser.loadURL(urlAddress);
     }
-    if (key == '2'){
-        browser.loadURL("http://api.plumelabs.com/udl3.html");
-    }
-    if (key == '3'){
-        browser.loadURL("http://api.plumelabs.com/udl4.html");
-    }
-    if (key == '4'){
-        browser.loadURL("http://api.plumelabs.com/udl5.html");
-    }
+
 }
 
 //--------------------------------------------------------------
