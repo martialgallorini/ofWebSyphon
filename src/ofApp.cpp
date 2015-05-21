@@ -6,8 +6,8 @@ void ofApp::setup(){
     
     syphonServer.setName("Awesomium web page");
     
-    browser.setup(5300, 1000);
-    urlAddress = "http://api.plumelabs.com/udl2.html";
+    browser.setup(1280, 720);
+    urlAddress = "http://www.duckduckgo.com";
     browser.loadURL(urlAddress);
 }
 
