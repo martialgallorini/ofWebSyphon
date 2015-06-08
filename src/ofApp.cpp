@@ -4,10 +4,10 @@
 void ofApp::setup(){
     ofSetFrameRate(60);
     
-    syphonServer.setName("Awesomium web page");
+    syphonServer.setName("oF Web Page");
     
-    browser.setup(1280, 720);
-    urlAddress = "http://www.duckduckgo.com";
+    browser.setup(5200, 1000);
+    urlAddress = "http://udl.plumelabs.com/world";
     browser.loadURL(urlAddress);
 }
 
@@ -19,7 +19,7 @@ void ofApp::update(){
 
 //--------------------------------------------------------------
 void ofApp::draw(){
-    //browser.draw(0, 0);
+    browser.draw(0, 0);
     ofSetColor(ofColor::black);
     ofBackground(220);
     
@@ -35,6 +35,9 @@ void ofApp::draw(){
     ofDrawBitmapString(fpsStr, 20, 130);
     
     ofDrawBitmapString("touche 'n' pour changer d'URL", 20, 160);
+    ofDrawBitmapString("touche 'r' pour re-charger la page", 20, 180);
+//    ofDrawBitmapString("touche '->' pour URL suivante", 20, 200);
+//    ofDrawBitmapString("touche '<-' pour URL precedente", 20, 220);
     
     syphonServer.publishTexture(&browser.frame.getTextureReference());
 }
@@ -45,7 +48,17 @@ void ofApp::keyPressed(int key){
     urlAddress = ofSystemTextBoxDialog("Saisir une URL", urlAddress);
     browser.loadURL(urlAddress);
     }
-
+    if (key == 'r'){
+        browser.loadURL(urlAddress);
+    }
+//    if (key == OF_KEY_LEFT){
+//        urlAddress = "http://udl.plumelabs.com/center";
+//        browser.loadURL(urlAddress);
+//    }
+//    if (key == OF_KEY_RIGHT){
+//        urlAddress = "http://udl.plumelabs.com/world/inauguration.html";
+//        browser.loadURL(urlAddress);
+//    }
 }
 
 //--------------------------------------------------------------
