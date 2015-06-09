@@ -7,7 +7,7 @@ void ofApp::setup(){
     syphonServer.setName("oF Web Page");
     
     browser.setup(5200, 1000);
-    urlAddress = "http://udl.plumelabs.com/world";
+    urlAddress = "http://url.here";
     browser.loadURL(urlAddress);
 }
 
@@ -52,11 +52,11 @@ void ofApp::keyPressed(int key){
         browser.loadURL(urlAddress);
     }
 //    if (key == OF_KEY_LEFT){
-//        urlAddress = "http://udl.plumelabs.com/center";
+//        urlAddress = "http://url.here";
 //        browser.loadURL(urlAddress);
 //    }
 //    if (key == OF_KEY_RIGHT){
-//        urlAddress = "http://udl.plumelabs.com/world/inauguration.html";
+//        urlAddress = "http://url.here";
 //        browser.loadURL(urlAddress);
 //    }
 }
