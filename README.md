@@ -22,9 +22,9 @@ Feel free to contribute and share.
 License
 -------
 
-ofWebSyphon - Graphical user interface to manage EPL330 led display journal
+ofWebSyphon
 
-Martial GALLORINI (http://www.martialgallorini.com/)
+Martial GALLORINI (http://martialgallorini.github.com/)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
