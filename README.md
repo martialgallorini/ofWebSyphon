@@ -24,7 +24,7 @@ License
 
 ofWebSyphon
 
-Martial GALLORINI (http://martialgallorini.github.com/)
+Martial GALLORINI (http://martialgallorini.github.io/)
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
